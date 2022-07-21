@@ -2,6 +2,7 @@ body {
   background-color: #fb6b6b;
   font-family: "Recursive", sans-serif;
   font-weight: 400;
+  padding-bottom: 70px;
 }
 
 h1 {
@@ -29,21 +30,21 @@ ion-icon {
   font-size: 24px;
 }
 
-.first-page {
+.home-screen {
   display: flex;
   flex-direction: column;
-  margin-top: calc(50vh - 160px);
+  margin-top: calc(40vh - 160px);
   align-items: center;
   justify-content: center;
 }
 
-.first-page img {
+.home-screen img {
   width: 136px;
   height: 160px;
-  margin-bottom: 15px;
+  margin-bottom: 22px;
 }
 
-.first-page .iniciate-button {
+.home-screen .iniciate-button {
   width: 246px;
   height: 54px;
   background-color: #ffffff;
@@ -65,6 +66,8 @@ div .header {
   width: 100%;
   align-items: center;
   justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 
 div .header img {
@@ -79,8 +82,10 @@ div .questions {
   width: 100%;
   align-items: center;
 }
-
-div .questions .question {
+div .question ion-icon {
+  cursor: pointer;
+}
+.question {
   display: flex;
   width: 300px;
   height: 65px;
@@ -90,6 +95,7 @@ div .questions .question {
   padding: 0 16px;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 div .footer {
@@ -114,6 +120,7 @@ div .footer {
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .front-question h2,
@@ -132,6 +139,9 @@ div .footer {
   display: flex;
   justify-content: space-evenly;
   margin-top: 30px;
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
 }
 
 .answer-options div {
@@ -144,6 +154,7 @@ div .footer {
   text-align: center;
   cursor: pointer;
   padding-top: 5px;
+  margin-right: 9px;
 }
 
 .answer-options div:nth-child(1) {
@@ -163,9 +174,11 @@ div .footer {
 #wrong-option-icon {
   fill: #ff3030;
 }
-
 #questionmark-option-icon {
   fill: #ff922e;
 }
 
-/* testando commit */
+.hidden,
+div .questions .question .hidden {
+  display: none;
+}

@@ -1,12 +1,20 @@
-import FirstPage from "./FirstPage";
-import FirstQuestionsPage from "./FirstQuestionsPage";
-import Questions from "./Questions";
-import IonIconsUtilizados from "./IonIconsUtilizados";
+import HomeScreen from "./HomeScreen";
+import React from "react";
 
 export default function App() {
+  const [hasStarted, setHasStarted] = React.useState(false);
+  const [currentPage, setCurrentPage] = React.useState(<HomeScreen />);
   return (
-    <div>
-      <FirstPage />
-    </div>
+    <>
+      {hasStarted ? (
+        currentPage
+      ) : (
+        <HomeScreen
+          setCurrentPage={setCurrentPage}
+          setHasStarted={setHasStarted}
+        />
+      )}
+    </>
   );
 }
+//homeScreen ? currentPage : currentPage

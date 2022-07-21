@@ -1,25 +1,3 @@
-export default function Questions() {
-  return (
-    <>
-      <div className="front-question">
-        <h2> O que é JSX?</h2>
-        <img src="../../assets/img/setinha.png" alt="Turning question icon" />
-      </div>
-      <div className="back-question">
-        <h2>JSX é uma sintaxe para escrever HTML dentro do JS</h2>
-        <div className="answer-options">
-          <div>
-            Não
-            <br /> lembrei
-          </div>
-          <div>Quase não lembrei</div>
-          <div>Zap!</div>
-        </div>
-      </div>
-    </>
-  );
-}
-
 const questions = [
   {
     question: "O que é JSX?",
@@ -55,3 +33,17 @@ const questions = [
       "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
   },
 ];
+
+function sortQuestions(arr) {
+  arr.sort(() => Math.random() - 0.5);
+  return arr;
+}
+
+const newQuestions = sortQuestions(questions);
+const flashcards = [{}, {}, {}, {}];
+for (let i = 0; i < 4; i++) {
+  flashcards[i].number = i + 1;
+  flashcards[i].question = newQuestions[i].question;
+  flashcards[i].answer = newQuestions[i].answer;
+}
+export default flashcards;
