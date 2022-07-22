@@ -1,9 +1,9 @@
 import flashcardsdeck from "./flashcardsdeck";
 import "./style.css";
-import Header from "./Header";
-
+import Header from "./Header/Header";
 import turningIcon from "../../assets/img/setinha.png";
 import React from "react";
+import Footer from "./Footer/Footer";
 
 function Flashcard({ number, question, answer, ...otherProps }) {
   const [hidden1, setHidden1] = React.useState(false);
@@ -49,7 +49,6 @@ function Flashcard({ number, question, answer, ...otherProps }) {
               otherProps.setQtdAnswers(otherProps.qtdAnswers + 1);
               otherProps.setIconsList([
                 ...otherProps.iconsList,
-
                 {
                   iconName: "close-circle",
                   iconId: "wrong-option-icon",
@@ -75,7 +74,6 @@ function Flashcard({ number, question, answer, ...otherProps }) {
                   iconId: "neutral-option-icon",
                 },
               ]);
-              console.log(otherProps.iconsList);
             }}
           >
             Quase não lembrei
@@ -104,24 +102,11 @@ function Flashcard({ number, question, answer, ...otherProps }) {
     </>
   );
 }
-// const finalIcons = [{}];
-
-function FinalIcons({ iconId, iconName }) {
-  return (
-    <div className="">
-      <ion-icon id={iconId} name={iconName}></ion-icon>
-    </div>
-  );
-}
 
 export default function Flashcards() {
   const [qtdAnswers, setQtdAnswers] = React.useState(0);
   const [iconsList, setIconsList] = React.useState([]);
 
-  // if (iconsList !== "a") {
-  //   finalIcons.push(iconsList);
-  // }
-  // console.log(`finalIcons: ${finalIcons}`);
   return (
     <div>
       <Header />
@@ -139,21 +124,7 @@ export default function Flashcards() {
           />
         ))}
       </div>
-      <div className="footer">
-        <h2>{qtdAnswers}/4 CONCLUÍDOS</h2>
-        <div
-          className="icons-list"
-          // {`icons-list hidden ${finalIcons[1] ? "hidden" : "hidden"}`}
-        >
-          {iconsList.map((items, index) => (
-            <FinalIcons
-              key={index}
-              iconId={items.iconId}
-              iconName={items.iconName}
-            />
-          ))}
-        </div>
-      </div>
+      <Footer iconsList={iconsList} qtdAnswers={qtdAnswers} />
     </div>
   );
 }
