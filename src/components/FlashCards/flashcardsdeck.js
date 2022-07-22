@@ -41,9 +41,13 @@ function sortQuestions(arr) {
 
 const newQuestions = sortQuestions(questions);
 const flashcardsdeck = [{}, {}, {}, {}];
+
 for (let i = 0; i < 4; i++) {
   flashcardsdeck[i].number = i + 1;
   flashcardsdeck[i].question = newQuestions[i].question;
   flashcardsdeck[i].answer = newQuestions[i].answer;
+  flashcardsdeck[i].hidden1 = false;
+  flashcardsdeck[i].hidden2 = true;
+  flashcardsdeck[i].hidden3 = true;
 }
 export default flashcardsdeck;

@@ -1,19 +1,36 @@
 import flashcardsdeck from "./flashcardsdeck";
 import logo from "../../assets/img/logo-zaprecall.png";
 import turningIcon from "../../assets/img/setinha.png";
+import React from "react";
 
 function Flashcard({ number, question, answer, ...otherProps }) {
+  const [hidden1, setHidden1] = React.useState(false);
+  const [hidden2, setHidden2] = React.useState(true);
+  const [hidden3, setHidden3] = React.useState(true);
   return (
     <>
-      <div className=" question">
+      <div className={`question ${hidden1 ? "hidden" : ""}`}>
         <p>Pergunta {number}</p>
-        <ion-icon name="play-outline"></ion-icon>
+        <ion-icon
+          onClick={() => {
+            setHidden1(true);
+            setHidden2(false);
+          }}
+          name="play-outline"
+        ></ion-icon>
       </div>
-      <div className="front-question ">
+      <div className={`front-question ${hidden2 ? "hidden" : ""}`}>
         <h2> {question}</h2>
-        <img src={turningIcon} alt="Turning question icon" />
+        <img
+          onClick={() => {
+            setHidden2(true);
+            setHidden3(false);
+          }}
+          src={turningIcon}
+          alt="Turning question icon"
+        />
       </div>
-      <div className="back-question ">
+      <div className={`back-question ${hidden3 ? "hidden" : ""}`}>
         <h2>{answer}</h2>
         <div className="answer-options">
           <div>
