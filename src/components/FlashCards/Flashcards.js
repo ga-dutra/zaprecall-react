@@ -1,6 +1,7 @@
 import flashcardsdeck from "./flashcardsdeck";
 import "./style.css";
-import logo from "../../assets/img/logo-zaprecall.png";
+import Header from "./Header";
+
 import turningIcon from "../../assets/img/setinha.png";
 import React from "react";
 
@@ -45,6 +46,15 @@ function Flashcard({ number, question, answer, ...otherProps }) {
               setHidden3(true);
               setIconAnswerType("close-circle");
               setIconAnswerId("wrong-option-icon");
+              otherProps.setQtdAnswers(otherProps.qtdAnswers + 1);
+              otherProps.setIconsList([
+                ...otherProps.iconsList,
+
+                {
+                  iconName: "close-circle",
+                  iconId: "wrong-option-icon",
+                },
+              ]);
             }}
           >
             Não
@@ -57,6 +67,15 @@ function Flashcard({ number, question, answer, ...otherProps }) {
               setHidden3(true);
               setIconAnswerType("help-circle");
               setIconAnswerId("neutral-option-icon");
+              otherProps.setQtdAnswers(otherProps.qtdAnswers + 1);
+              otherProps.setIconsList([
+                ...otherProps.iconsList,
+                {
+                  iconName: "help-circle",
+                  iconId: "neutral-option-icon",
+                },
+              ]);
+              console.log(otherProps.iconsList);
             }}
           >
             Quase não lembrei
@@ -68,6 +87,14 @@ function Flashcard({ number, question, answer, ...otherProps }) {
               setHidden3(true);
               setIconAnswerType("checkmark-circle");
               setIconAnswerId("right-option-icon");
+              otherProps.setQtdAnswers(otherProps.qtdAnswers + 1);
+              otherProps.setIconsList([
+                ...otherProps.iconsList,
+                {
+                  iconName: "checkmark-circle",
+                  iconId: "right-option-icon",
+                },
+              ]);
             }}
           >
             Zap!
@@ -77,14 +104,27 @@ function Flashcard({ number, question, answer, ...otherProps }) {
     </>
   );
 }
+// const finalIcons = [{}];
+
+function FinalIcons({ iconId, iconName }) {
+  return (
+    <div className="">
+      <ion-icon id={iconId} name={iconName}></ion-icon>
+    </div>
+  );
+}
 
 export default function Flashcards() {
+  const [qtdAnswers, setQtdAnswers] = React.useState(0);
+  const [iconsList, setIconsList] = React.useState([]);
+
+  // if (iconsList !== "a") {
+  //   finalIcons.push(iconsList);
+  // }
+  // console.log(`finalIcons: ${finalIcons}`);
   return (
     <div>
-      <div className="header">
-        <img src={logo} alt="ZapRecall logo" />
-        <h1>ZapRecall</h1>
-      </div>
+      <Header />
       <div className="questions">
         {flashcardsdeck.map((items, index) => (
           <Flashcard
@@ -92,22 +132,28 @@ export default function Flashcards() {
             number={items.number}
             question={items.question}
             answer={items.answer}
+            qtdAnswers={qtdAnswers}
+            setQtdAnswers={setQtdAnswers}
+            iconsList={iconsList}
+            setIconsList={setIconsList}
           />
         ))}
       </div>
       <div className="footer">
-        <h2>0/4 CONCLUÍDOS</h2>
+        <h2>{qtdAnswers}/4 CONCLUÍDOS</h2>
+        <div
+          className="icons-list"
+          // {`icons-list hidden ${finalIcons[1] ? "hidden" : "hidden"}`}
+        >
+          {iconsList.map((items, index) => (
+            <FinalIcons
+              key={index}
+              iconId={items.iconId}
+              iconName={items.iconName}
+            />
+          ))}
+        </div>
       </div>
-    </div>
-  );
-}
-
-function IonIconsUtilizados() {
-  return (
-    <div>
-      <ion-icon id="correct-option-icon" name="checkmark-circle"></ion-icon>
-      <ion-icon id="wrong-option-icon" name="close-circle"></ion-icon>
-      <ion-icon id="questionmark-option-icon" name="help-circle"></ion-icon>
     </div>
   );
 }

@@ -43,10 +43,15 @@ div .footer {
   height: 70px;
   background-color: #ffffff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   font-family: "Recursive", sans-serif;
+  box-sizing: border-box;
+}
+div .footer h2 {
+  margin-top: 8px;
 }
 
 .front-question,
@@ -119,11 +124,6 @@ div .footer {
   pointer-events: none;
 }
 
-.hidden,
-div .questions .question .hidden {
-  display: none;
-}
-
 .wrong-answer,
 .right-answer,
 .neutral-answer {
@@ -140,4 +140,13 @@ div .questions .question .hidden {
 
 .neutral-answer {
   color: #ff922e;
+}
+
+.footer .icons-list {
+  display: flex;
+  padding-top: 4px;
+}
+.hidden,
+div .questions .question .hidden {
+  display: none;
 }
