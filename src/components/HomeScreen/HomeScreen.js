@@ -1,4 +1,5 @@
-import Flashcards from "./Flashcards";
+import Flashcards from "../FlashCards/Flashcards";
+import logo from "../../assets/img/logo-zaprecall.png";
 
 export default function HomeScreen({ setCurrentPage, setHasStarted }) {
   function startRecall() {
@@ -8,7 +9,7 @@ export default function HomeScreen({ setCurrentPage, setHasStarted }) {
 
   return (
     <div className="home-screen">
-      <img src="../../assets/img/logo-zaprecall.png" alt="ZapRecall logo" />
+      <img src={logo} alt="ZapRecall logo" />
       <h1>ZapRecall</h1>
       <div onClick={startRecall} className="iniciate-button">
         Iniciar Recall!!

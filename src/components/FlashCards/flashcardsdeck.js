@@ -40,10 +40,10 @@ function sortQuestions(arr) {
 }
 
 const newQuestions = sortQuestions(questions);
-const flashcards = [{}, {}, {}, {}];
+const flashcardsdeck = [{}, {}, {}, {}];
 for (let i = 0; i < 4; i++) {
-  flashcards[i].number = i + 1;
-  flashcards[i].question = newQuestions[i].question;
-  flashcards[i].answer = newQuestions[i].answer;
+  flashcardsdeck[i].number = i + 1;
+  flashcardsdeck[i].question = newQuestions[i].question;
+  flashcardsdeck[i].answer = newQuestions[i].answer;
 }
-export default flashcards;
+export default flashcardsdeck;

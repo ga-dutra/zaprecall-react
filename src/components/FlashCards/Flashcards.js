@@ -1,4 +1,6 @@
-import flashcards from "../flashcards";
+import flashcardsdeck from "./flashcardsdeck";
+import logo from "../../assets/img/logo-zaprecall.png";
+import turningIcon from "../../assets/img/setinha.png";
 
 function Flashcard({ number, question, answer, ...otherProps }) {
   return (
@@ -9,7 +11,7 @@ function Flashcard({ number, question, answer, ...otherProps }) {
       </div>
       <div className="front-question ">
         <h2> {question}</h2>
-        <img src="../../assets/img/setinha.png" alt="Turning question icon" />
+        <img src={turningIcon} alt="Turning question icon" />
       </div>
       <div className="back-question ">
         <h2>{answer}</h2>
@@ -30,11 +32,11 @@ export default function Flashcards() {
   return (
     <div>
       <div className="header">
-        <img src="../../assets/img/logo-zaprecall.png" alt="ZapRecall logo" />
+        <img src={logo} alt="ZapRecall logo" />
         <h1>ZapRecall</h1>
       </div>
       <div className="questions">
-        {flashcards.map((items, index) => (
+        {flashcardsdeck.map((items, index) => (
           <Flashcard
             key={index}
             number={items.number}
@@ -46,6 +48,16 @@ export default function Flashcards() {
       <div className="footer">
         <h2>0/4 CONCLUÍDOS</h2>
       </div>
+    </div>
+  );
+}
+
+function IonIconsUtilizados() {
+  return (
+    <div>
+      <ion-icon id="correct-option-icon" name="checkmark-circle"></ion-icon>
+      <ion-icon id="wrong-option-icon" name="close-circle"></ion-icon>
+      <ion-icon id="questionmark-option-icon" name="help-circle"></ion-icon>
     </div>
   );
 }
