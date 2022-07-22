@@ -1,4 +1,5 @@
 import flashcardsdeck from "./flashcardsdeck";
+import "./style.css";
 import logo from "../../assets/img/logo-zaprecall.png";
 import turningIcon from "../../assets/img/setinha.png";
 import React from "react";
@@ -7,16 +8,20 @@ function Flashcard({ number, question, answer, ...otherProps }) {
   const [hidden1, setHidden1] = React.useState(false);
   const [hidden2, setHidden2] = React.useState(true);
   const [hidden3, setHidden3] = React.useState(true);
+  const [userAnswer, setUserAnswer] = React.useState("");
+  const [iconAnswerType, setIconAnswerType] = React.useState("play-outline");
+  const [iconAnswerId, setIconAnswerId] = React.useState("");
   return (
     <>
       <div className={`question ${hidden1 ? "hidden" : ""}`}>
-        <p>Pergunta {number}</p>
+        <p className={userAnswer}>Pergunta {number}</p>
         <ion-icon
+          id={iconAnswerId}
           onClick={() => {
             setHidden1(true);
             setHidden2(false);
           }}
-          name="play-outline"
+          name={iconAnswerType}
         ></ion-icon>
       </div>
       <div className={`front-question ${hidden2 ? "hidden" : ""}`}>
@@ -33,12 +38,40 @@ function Flashcard({ number, question, answer, ...otherProps }) {
       <div className={`back-question ${hidden3 ? "hidden" : ""}`}>
         <h2>{answer}</h2>
         <div className="answer-options">
-          <div>
+          <div
+            onClick={() => {
+              setUserAnswer("wrong-answer");
+              setHidden1(false);
+              setHidden3(true);
+              setIconAnswerType("close-circle");
+              setIconAnswerId("wrong-option-icon");
+            }}
+          >
             Não
             <br /> lembrei
           </div>
-          <div>Quase não lembrei</div>
-          <div>Zap!</div>
+          <div
+            onClick={() => {
+              setUserAnswer("neutral-answer");
+              setHidden1(false);
+              setHidden3(true);
+              setIconAnswerType("help-circle");
+              setIconAnswerId("neutral-option-icon");
+            }}
+          >
+            Quase não lembrei
+          </div>
+          <div
+            onClick={() => {
+              setUserAnswer("right-answer");
+              setHidden1(false);
+              setHidden3(true);
+              setIconAnswerType("checkmark-circle");
+              setIconAnswerId("right-option-icon");
+            }}
+          >
+            Zap!
+          </div>
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 import Flashcards from "../FlashCards/Flashcards";
 import logo from "../../assets/img/logo-zaprecall.png";
+import "./style.css";
 
 export default function HomeScreen({ setCurrentPage, setHasStarted }) {
   function startRecall() {

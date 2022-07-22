@@ -106,17 +106,38 @@ div .footer {
   padding-top: 12px;
 }
 
-#correct-option-icon {
+#right-option-icon {
   fill: #2fbe34;
+  pointer-events: none;
 }
 #wrong-option-icon {
   fill: #ff3030;
+  pointer-events: none;
 }
-#questionmark-option-icon {
+#neutral-option-icon {
   fill: #ff922e;
+  pointer-events: none;
 }
 
 .hidden,
 div .questions .question .hidden {
   display: none;
+}
+
+.wrong-answer,
+.right-answer,
+.neutral-answer {
+  text-decoration-line: line-through;
+}
+
+.wrong-answer {
+  color: #ff3030;
+}
+
+.right-answer {
+  color: #2fbe34;
+}
+
+.neutral-answer {
+  color: #ff922e;
 }
