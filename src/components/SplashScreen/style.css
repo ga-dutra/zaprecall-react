@@ -1,4 +1,4 @@
-.home-screen {
+.splash-screen {
   display: flex;
   flex-direction: column;
   margin-top: calc(40vh - 160px);
@@ -6,13 +6,13 @@
   justify-content: center;
 }
 
-.home-screen img {
+.splash-screen img {
   width: 136px;
   height: 160px;
   margin-bottom: 22px;
 }
 
-.home-screen .iniciate-button {
+.splash-screen .iniciate-button {
   width: 246px;
   height: 54px;
   background-color: #ffffff;

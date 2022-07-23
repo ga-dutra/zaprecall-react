@@ -2,14 +2,14 @@ import Flashcards from "../FlashCards/Flashcards";
 import logo from "../../assets/img/logo-zaprecall.png";
 import "./style.css";
 
-export default function HomeScreen({ setCurrentPage, setHasStarted }) {
+export default function SplashScreen({ setCurrentPage, setHasStarted }) {
   function startRecall() {
     setHasStarted(true);
     setCurrentPage(<Flashcards />);
   }
 
   return (
-    <div className="home-screen">
+    <div className="splash-screen">
       <img src={logo} alt="ZapRecall logo" />
       <h1>ZapRecall</h1>
       <div onClick={startRecall} className="iniciate-button">
