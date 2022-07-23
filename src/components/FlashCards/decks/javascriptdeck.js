@@ -1,4 +1,4 @@
-const javascriptdeckquestions = [
+const javascriptdeck = [
   {
     question: "Quais símbolos são usados para comentários em JavaScript?",
     answer: "Barra dupla ( // ) e barra com asterisco ( /*  */ )",
@@ -70,20 +70,4 @@ const javascriptdeckquestions = [
   },
 ];
 
-function sortQuestions(arr) {
-  arr.sort(() => Math.random() - 0.5);
-  return arr;
-}
-
-const newQuestions = sortQuestions(javascriptdeckquestions);
-const javascriptdeck = [{}, {}, {}, {}];
-
-for (let i = 0; i < 4; i++) {
-  javascriptdeck[i].number = i + 1;
-  javascriptdeck[i].question = newQuestions[i].question;
-  javascriptdeck[i].answer = newQuestions[i].answer;
-  javascriptdeck[i].hidden1 = false;
-  javascriptdeck[i].hidden2 = true;
-  javascriptdeck[i].hidden3 = true;
-}
 export default javascriptdeck;

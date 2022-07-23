@@ -1,4 +1,4 @@
-const harrypotterdeckquestions = [
+const harrypotterdeck = [
   {
     question: "Antes de Dumbledore, quem era o Diretor de Hogwarts?",
     answer: "Armando Dippet",
@@ -69,21 +69,21 @@ const harrypotterdeckquestions = [
     answer: "O Frei Gorducho",
   },
 ];
-
-function sortQuestions(arr) {
-  arr.sort(() => Math.random() - 0.5);
-  return arr;
-}
-
-const newQuestions = sortQuestions(harrypotterdeckquestions);
-const harrypotterdeck = [{}, {}, {}, {}];
-
-for (let i = 0; i < 4; i++) {
-  harrypotterdeck[i].number = i + 1;
-  harrypotterdeck[i].question = newQuestions[i].question;
-  harrypotterdeck[i].answer = newQuestions[i].answer;
-  harrypotterdeck[i].hidden1 = false;
-  harrypotterdeck[i].hidden2 = true;
-  harrypotterdeck[i].hidden3 = true;
-}
 export default harrypotterdeck;
+
+// function sortQuestions(arr) {
+//   arr.sort(() => Math.random() - 0.5);
+//   return arr;
+// }
+
+// const newQuestions = sortQuestions(harrypotterdeckquestions);
+// const harrypotterdeck = [{}, {}, {}, {}];
+
+// for (let i = 0; i < 4; i++) {
+//   harrypotterdeck[i].number = i + 1;
+//   harrypotterdeck[i].question = newQuestions[i].question;
+//   harrypotterdeck[i].answer = newQuestions[i].answer;
+//   harrypotterdeck[i].hidden1 = false;
+//   harrypotterdeck[i].hidden2 = true;
+//   harrypotterdeck[i].hidden3 = true;
+// }

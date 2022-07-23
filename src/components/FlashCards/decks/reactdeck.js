@@ -1,4 +1,4 @@
-const reactdeckquestions = [
+const reactdeck = [
   {
     question: "O que é JSX?",
     answer: "Uma extensão de linguagem do JavaScript",
@@ -33,22 +33,5 @@ const reactdeckquestions = [
       "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
   },
 ];
-
-function sortQuestions(arr) {
-  arr.sort(() => Math.random() - 0.5);
-  return arr;
-}
-
-const newQuestions = sortQuestions(reactdeckquestions);
-const reactdeck = [{}, {}, {}, {}];
-
-for (let i = 0; i < 4; i++) {
-  reactdeck[i].number = i + 1;
-  reactdeck[i].question = newQuestions[i].question;
-  reactdeck[i].answer = newQuestions[i].answer;
-  reactdeck[i].hidden1 = false;
-  reactdeck[i].hidden2 = true;
-  reactdeck[i].hidden3 = true;
-}
 
 export default reactdeck;

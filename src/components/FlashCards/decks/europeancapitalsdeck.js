@@ -1,4 +1,4 @@
-const europeancapitalsdeckquestions = [
+const europeancapitalsdeck = [
   {
     question: "Qual é a capital da Alemanha ?",
     answer: "Berlim",
@@ -65,20 +65,4 @@ const europeancapitalsdeckquestions = [
   },
 ];
 
-function sortQuestions(arr) {
-  arr.sort(() => Math.random() - 0.5);
-  return arr;
-}
-
-const newQuestions = sortQuestions(europeancapitalsdeckquestions);
-const europeancapitalsdeck = [{}, {}, {}, {}];
-
-for (let i = 0; i < 4; i++) {
-  europeancapitalsdeck[i].number = i + 1;
-  europeancapitalsdeck[i].question = newQuestions[i].question;
-  europeancapitalsdeck[i].answer = newQuestions[i].answer;
-  europeancapitalsdeck[i].hidden1 = false;
-  europeancapitalsdeck[i].hidden2 = true;
-  europeancapitalsdeck[i].hidden3 = true;
-}
 export default europeancapitalsdeck;

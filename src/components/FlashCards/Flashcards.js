@@ -105,7 +105,10 @@ function Flashcard({ number, question, answer, ...otherProps }) {
     </>
   );
 }
-
+function sortQuestions(arr) {
+  arr.sort(() => Math.random() - 0.5);
+  return arr;
+}
 export default function Flashcards({
   setCurrentPage,
   setHasStarted,
@@ -114,18 +117,27 @@ export default function Flashcards({
 }) {
   const [qtdAnswers, setQtdAnswers] = React.useState(0);
   const [iconsList, setIconsList] = React.useState([]);
-
-  let flashcardsdeck;
+  let sortedquestions;
   if (String(deck) === "reactdeck") {
-    flashcardsdeck = reactdeck;
+    sortedquestions = sortQuestions(reactdeck);
   } else if (String(deck) === "europeancapitalsdeck") {
-    flashcardsdeck = europeancapitalsdeck;
+    sortedquestions = sortQuestions(europeancapitalsdeck);
   } else if (String(deck) === "harrypotterdeck") {
-    flashcardsdeck = harrypotterdeck;
+    sortedquestions = sortQuestions(harrypotterdeck);
   } else if (String(deck) === "javascriptdeck") {
-    flashcardsdeck = javascriptdeck;
+    sortedquestions = sortQuestions(javascriptdeck);
   }
 
+  const flashcardsdeck = [{}, {}, {}, {}];
+
+  for (let i = 0; i < 4; i++) {
+    flashcardsdeck[i].number = i + 1;
+    flashcardsdeck[i].question = sortedquestions[i].question;
+    flashcardsdeck[i].answer = sortedquestions[i].answer;
+    flashcardsdeck[i].hidden1 = false;
+    flashcardsdeck[i].hidden2 = true;
+    flashcardsdeck[i].hidden3 = true;
+  }
   return (
     <div>
       <Header />
