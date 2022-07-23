@@ -37,7 +37,8 @@
   font-size: 14px;
 }
 
-.splash-screen .zap-goal-input #zap-goal {
+.splash-screen .zap-goal-input #zap-goal,
+.deck-selection {
   width: 246px;
   height: 40px;
   box-sizing: border-box;
@@ -48,9 +49,11 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   padding-left: 10px;
   color: #fb6b6b;
+  font-weight: 600;
 }
 
-.splash-screen .zap-goal-input #zap-goal:focus {
+.splash-screen .zap-goal-input #zap-goal:focus,
+.deck-selection:focus {
   outline: none;
 }
 

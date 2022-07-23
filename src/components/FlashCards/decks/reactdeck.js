@@ -1,4 +1,4 @@
-const questions = [
+const reactdeckquestions = [
   {
     question: "O que é JSX?",
     answer: "Uma extensão de linguagem do JavaScript",
@@ -39,15 +39,16 @@ function sortQuestions(arr) {
   return arr;
 }
 
-const newQuestions = sortQuestions(questions);
-const flashcardsdeck = [{}, {}, {}, {}];
+const newQuestions = sortQuestions(reactdeckquestions);
+const reactdeck = [{}, {}, {}, {}];
 
 for (let i = 0; i < 4; i++) {
-  flashcardsdeck[i].number = i + 1;
-  flashcardsdeck[i].question = newQuestions[i].question;
-  flashcardsdeck[i].answer = newQuestions[i].answer;
-  flashcardsdeck[i].hidden1 = false;
-  flashcardsdeck[i].hidden2 = true;
-  flashcardsdeck[i].hidden3 = true;
+  reactdeck[i].number = i + 1;
+  reactdeck[i].question = newQuestions[i].question;
+  reactdeck[i].answer = newQuestions[i].answer;
+  reactdeck[i].hidden1 = false;
+  reactdeck[i].hidden2 = true;
+  reactdeck[i].hidden3 = true;
 }
-export default flashcardsdeck;
+
+export default reactdeck;

@@ -9,6 +9,12 @@ export default function SplashScreen({ setCurrentPage, setHasStarted }) {
   function startRecall() {
     if (Number(zapGoal) < 1 || Number(zapGoal) > 4) {
       setInputError("A meta deve ser um valor entre 1 e 4!");
+    }
+    if (
+      String(deck) !== "reactdeck" &&
+      String(deck) !== "europeancapitalsdeck"
+    ) {
+      alert("Por favor, selecione um deck");
     } else {
       setHasStarted(true);
       setCurrentPage(
@@ -16,15 +22,39 @@ export default function SplashScreen({ setCurrentPage, setHasStarted }) {
           setCurrentPage={setCurrentPage}
           setHasStarted={setHasStarted}
           zapGoal={Number(zapGoal)}
+          deck={deck}
         />
       );
     }
   }
 
+  const possibleDecks = [
+    { value: "", text: "Escolha seu deck..", disabled: "disabled selected" },
+    { value: "reactdeck", text: "React" },
+    { value: "europeancapitalsdeck", text: "Capitais Européias" },
+  ];
+  const [deck, setDeck] = React.useState(possibleDecks[0].value);
+  const handleChange = (event) => {
+    setDeck(event.target.value);
+  };
+
   return (
     <div className="splash-screen">
       <img src={logo} alt="ZapRecall logo" />
       <h1>ZapRecall</h1>
+      <select
+        className="deck-selection"
+        name="deck-selection"
+        value={deck}
+        onChange={handleChange}
+      >
+        {possibleDecks.map((option) => (
+          <option key={option.value} value={option.value}>
+            {" "}
+            {option.text}
+          </option>
+        ))}
+      </select>
       <div className="zap-goal-input">
         <input
           type="number"

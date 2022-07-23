@@ -1,4 +1,5 @@
-import flashcardsdeck from "./flashcardsdeck";
+import europeancapitalsdeck from "./decks/europeancapitalsdeck";
+import reactdeck from "./decks/reactdeck";
 import "./style.css";
 import Header from "./Header/Header";
 import turningIcon from "../../assets/img/setinha.png";
@@ -103,9 +104,21 @@ function Flashcard({ number, question, answer, ...otherProps }) {
   );
 }
 
-export default function Flashcards({ setCurrentPage, setHasStarted, zapGoal }) {
+export default function Flashcards({
+  setCurrentPage,
+  setHasStarted,
+  zapGoal,
+  deck,
+}) {
   const [qtdAnswers, setQtdAnswers] = React.useState(0);
   const [iconsList, setIconsList] = React.useState([]);
+
+  let flashcardsdeck;
+  if (String(deck) === "reactdeck") {
+    flashcardsdeck = reactdeck;
+  } else if (String(deck) === "europeancapitalsdeck") {
+    flashcardsdeck = europeancapitalsdeck;
+  }
 
   return (
     <div>
@@ -130,6 +143,7 @@ export default function Flashcards({ setCurrentPage, setHasStarted, zapGoal }) {
         iconsList={iconsList}
         qtdAnswers={qtdAnswers}
         zapGoal={zapGoal}
+        deck={deck}
       />
     </div>
   );
