@@ -4,6 +4,7 @@
   margin-top: calc(40vh - 160px);
   align-items: center;
   justify-content: center;
+  font-family: "Recursive", sans-serif;
 }
 
 .splash-screen img {
@@ -22,9 +23,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Recursive", sans-serif;
+
   font-size: 18px;
   color: #d70900;
   margin-top: 30px;
   cursor: pointer;
+}
+
+.zap-goal-input {
+  display: flex;
+  flex-direction: column;
+  font-family: "Recursive", sans-serif;
+  font-size: 14px;
+}
+
+.splash-screen .zap-goal-input #zap-goal {
+  width: 246px;
+  height: 40px;
+  box-sizing: border-box;
+  margin: 36px 0 -4px 0;
+  background-color: #ffffff;
+  border: 1px solid #d70900;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding-left: 10px;
+  color: #fb6b6b;
+}
+
+.splash-screen .zap-goal-input #zap-goal:focus {
+  outline: none;
+}
+
+.splash-screen .zap-goal-input #error-zap-goal {
+  font-size: 13px;
+  margin-top: 8px;
+  color: red;
+  font-weight: 600;
+  font-style: italic;
 }

@@ -15,10 +15,15 @@ export default function Footer({
   qtdAnswers,
   setCurrentPage,
   setHasStarted,
+  zapGoal,
 }) {
   return (
     <div className="footer">
-      <FinalMessage iconsList={iconsList} qtdAnswers={qtdAnswers} />
+      <FinalMessage
+        iconsList={iconsList}
+        qtdAnswers={qtdAnswers}
+        zapGoal={zapGoal}
+      />
       <h2>{qtdAnswers}/4 CONCLUÍDOS</h2>
       <div className="icons-list">
         {iconsList.map((items, index) => (
