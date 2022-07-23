@@ -5,7 +5,12 @@ import "./style.css";
 export default function SplashScreen({ setCurrentPage, setHasStarted }) {
   function startRecall() {
     setHasStarted(true);
-    setCurrentPage(<Flashcards />);
+    setCurrentPage(
+      <Flashcards
+        setCurrentPage={setCurrentPage}
+        setHasStarted={setHasStarted}
+      />
+    );
   }
 
   return (

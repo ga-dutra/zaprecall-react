@@ -103,7 +103,7 @@ function Flashcard({ number, question, answer, ...otherProps }) {
   );
 }
 
-export default function Flashcards() {
+export default function Flashcards({ setCurrentPage, setHasStarted }) {
   const [qtdAnswers, setQtdAnswers] = React.useState(0);
   const [iconsList, setIconsList] = React.useState([]);
 
@@ -124,7 +124,12 @@ export default function Flashcards() {
           />
         ))}
       </div>
-      <Footer iconsList={iconsList} qtdAnswers={qtdAnswers} />
+      <Footer
+        setCurrentPage={setCurrentPage}
+        setHasStarted={setHasStarted}
+        iconsList={iconsList}
+        qtdAnswers={qtdAnswers}
+      />
     </div>
   );
 }

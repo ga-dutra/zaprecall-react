@@ -1,0 +1,26 @@
+.footer .icons-list {
+  display: flex;
+  padding-top: 4px;
+}
+
+.grade-message {
+  width: 120px;
+  display: flex;
+  padding-top: 20px;
+  padding-left: 96px;
+  justify-content: space-around;
+}
+div .grade-message img {
+  padding-right: 12px;
+}
+div > .final-message {
+  width: 220px;
+  text-align: center;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+
+.final-message-container {
+  display: flex;
+  flex-direction: column;
+}
