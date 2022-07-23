@@ -1,5 +1,7 @@
 import europeancapitalsdeck from "./decks/europeancapitalsdeck";
 import reactdeck from "./decks/reactdeck";
+import harrypotterdeck from "./decks/harrypotterdeck";
+import javascriptdeck from "./decks/javascriptdeck";
 import "./style.css";
 import Header from "./Header/Header";
 import turningIcon from "../../assets/img/setinha.png";
@@ -118,6 +120,10 @@ export default function Flashcards({
     flashcardsdeck = reactdeck;
   } else if (String(deck) === "europeancapitalsdeck") {
     flashcardsdeck = europeancapitalsdeck;
+  } else if (String(deck) === "harrypotterdeck") {
+    flashcardsdeck = harrypotterdeck;
+  } else if (String(deck) === "javascriptdeck") {
+    flashcardsdeck = javascriptdeck;
   }
 
   return (

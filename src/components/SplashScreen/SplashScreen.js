@@ -12,7 +12,9 @@ export default function SplashScreen({ setCurrentPage, setHasStarted }) {
     }
     if (
       String(deck) !== "reactdeck" &&
-      String(deck) !== "europeancapitalsdeck"
+      String(deck) !== "europeancapitalsdeck" &&
+      String(deck) !== "harrypotterdeck" &&
+      String(deck) !== "javascriptdeck"
     ) {
       alert("Por favor, selecione um deck");
     } else {
@@ -30,8 +32,10 @@ export default function SplashScreen({ setCurrentPage, setHasStarted }) {
 
   const possibleDecks = [
     { value: "", text: "Escolha seu deck..", disabled: "disabled selected" },
-    { value: "reactdeck", text: "React" },
+    { value: "reactdeck", text: "Fundamentos de React" },
+    { value: "javascriptdeck", text: "Fundamentos de JavaScript" },
     { value: "europeancapitalsdeck", text: "Capitais Européias" },
+    { value: "harrypotterdeck", text: "Harry Potter World" },
   ];
   const [deck, setDeck] = React.useState(possibleDecks[0].value);
   const handleChange = (event) => {

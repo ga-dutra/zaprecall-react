@@ -24,7 +24,7 @@ const europeancapitalsdeckquestions = [
     answer: "Dublin",
   },
   {
-    question: "Qual é a capital de Porgual ?",
+    question: "Qual é a capital de Portugal ?",
     answer: "Lisboa ",
   },
   {
