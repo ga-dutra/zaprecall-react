@@ -9,8 +9,7 @@ export default function SplashScreen({ setCurrentPage, setHasStarted }) {
   function startRecall() {
     if (Number(zapGoal) < 1 || Number(zapGoal) > 4) {
       setInputError("A meta deve ser um valor entre 1 e 4!");
-    }
-    if (
+    } else if (
       String(deck) !== "reactdeck" &&
       String(deck) !== "europeancapitalsdeck" &&
       String(deck) !== "harrypotterdeck" &&
