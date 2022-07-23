@@ -1,12 +1,18 @@
 import europeancapitalsdeck from "./decks/europeancapitalsdeck";
 import reactdeck from "./decks/reactdeck";
 import harrypotterdeck from "./decks/harrypotterdeck";
+import sortQuestionsAgain from "./decks/harrypotterdeck";
 import javascriptdeck from "./decks/javascriptdeck";
 import "./style.css";
 import Header from "./Header/Header";
 import turningIcon from "../../assets/img/setinha.png";
 import React from "react";
 import Footer from "./Footer/Footer";
+
+function sortQuestions(arr) {
+  arr.sort(() => Math.random() - 0.5);
+  return arr;
+}
 
 function Flashcard({ number, question, answer, ...otherProps }) {
   const [hidden1, setHidden1] = React.useState(false);
@@ -105,10 +111,7 @@ function Flashcard({ number, question, answer, ...otherProps }) {
     </>
   );
 }
-function sortQuestions(arr) {
-  arr.sort(() => Math.random() - 0.5);
-  return arr;
-}
+
 export default function Flashcards({
   setCurrentPage,
   setHasStarted,
@@ -117,6 +120,7 @@ export default function Flashcards({
 }) {
   const [qtdAnswers, setQtdAnswers] = React.useState(0);
   const [iconsList, setIconsList] = React.useState([]);
+  console.log(sortQuestionsAgain);
   let sortedquestions;
   if (String(deck) === "reactdeck") {
     sortedquestions = sortQuestions(reactdeck);
@@ -129,7 +133,6 @@ export default function Flashcards({
   }
 
   const flashcardsdeck = [{}, {}, {}, {}];
-
   for (let i = 0; i < 4; i++) {
     flashcardsdeck[i].number = i + 1;
     flashcardsdeck[i].question = sortedquestions[i].question;
@@ -138,11 +141,12 @@ export default function Flashcards({
     flashcardsdeck[i].hidden2 = true;
     flashcardsdeck[i].hidden3 = true;
   }
+  const [finaldeck, setFinalDeck] = React.useState(flashcardsdeck);
   return (
     <div>
       <Header />
       <div className="questions">
-        {flashcardsdeck.map((items, index) => (
+        {finaldeck.map((items, index) => (
           <Flashcard
             key={index}
             number={items.number}

@@ -39,10 +39,6 @@ const harrypotterdeck = [
     answer: "Feitiço do Patrono",
   },
   {
-    question: "Qual é a capital da Dinamarca ?",
-    answer: "Copenhague",
-  },
-  {
     question:
       "Os professores de Defesa Contra as Artes das Trevas costumam durar quanto tempo?",
     answer: "Um ano",
@@ -69,21 +65,5 @@ const harrypotterdeck = [
     answer: "O Frei Gorducho",
   },
 ];
+
 export default harrypotterdeck;
-
-// function sortQuestions(arr) {
-//   arr.sort(() => Math.random() - 0.5);
-//   return arr;
-// }
-
-// const newQuestions = sortQuestions(harrypotterdeckquestions);
-// const harrypotterdeck = [{}, {}, {}, {}];
-
-// for (let i = 0; i < 4; i++) {
-//   harrypotterdeck[i].number = i + 1;
-//   harrypotterdeck[i].question = newQuestions[i].question;
-//   harrypotterdeck[i].answer = newQuestions[i].answer;
-//   harrypotterdeck[i].hidden1 = false;
-//   harrypotterdeck[i].hidden2 = true;
-//   harrypotterdeck[i].hidden3 = true;
-// }
