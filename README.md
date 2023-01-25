@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+<div align="center">
+  <h1>ZAP-RECALL</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  Test your knowledge of React and JavaScript fundamentals, the world of Harry Potter and European geography.
+  <br>
+</div>
+ <h2>About</h2>
+ Zap-Recall is an interactive game where you can select a deck of questions regarding a specific subject, such as JavaScript fundamentals, Harry Potter lore and European geography, 
+  <br>
+ <h2>Tecnologies</h2>
+ The following tools and frameworks were used in the construction of the project:
+ <br>
+ <p>
+ 
+![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![ReactJS](https://img.shields.io/badge/ReactJS-13cf35?style=for-the-badge&logo=react&logoColor=080808)
+![Styled-Components](https://img.shields.io/badge/Styled-Components-61DAFB?style=for-the-badge&logo=styledcomponents&logoColor=61DAFB)
+
+</p>
+
 
 ## Available Scripts
 
